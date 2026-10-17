@@ -16,12 +16,65 @@ from .serializers import (
     InspectionRecordSerializer,
     InspectionMeasurementSerializer,
 )
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.exceptions import ValidationError, PermissionDenied
+from accounts.permissions import IsSupervisor
+
+
 
 
 class InspectionTemplateViewSet(viewsets.ModelViewSet):
     queryset = InspectionTemplate.objects.prefetch_related("parameters").all()
     serializer_class = InspectionTemplateSerializer
     permission_classes = [IsAuthenticated]
+
+    @action(detail=True, methods=["post"], permission_classes=[IsSupervisor])
+    def review(self, request, pk=None):
+        record = self.get_object()
+
+        if record.inspector_id == request.user.id:
+            raise PermissionDenied(
+                "Inspectors cannot approve their own inspections."
+            )
+
+        decision = request.data.get("decision")
+        notes = request.data.get("notes", "")
+
+        if record.status not in [
+            InspectionRecord.Status.PENDING_REVIEW,
+            InspectionRecord.Status.FAILED,
+        ]:
+            raise ValidationError(
+                "Only completed inspections awaiting review or failed inspections can be reviewed."
+            )
+
+        if decision == "approve":
+            if record.status == InspectionRecord.Status.FAILED:
+                raise ValidationError(
+                    "Failed inspections cannot be approved. Reject or quarantine them."
+                )
+            record.status = InspectionRecord.Status.APPROVED
+
+        elif decision == "reject":
+            record.status = InspectionRecord.Status.REJECTED
+
+        elif decision == "quarantine":
+            record.status = InspectionRecord.Status.QUARANTINED
+
+        else:
+            raise ValidationError(
+                "Decision must be approve, reject, or quarantine."
+            )
+
+        if notes:
+            record.notes = (
+                f"{record.notes}\nSupervisor review: {notes}".strip()
+            )
+
+        record.save()
+        return Response(InspectionRecordSerializer(record).data)
 
     def get_permissions(self):
         if self.action in ["create", "update", "partial_update", "destroy"]:
@@ -49,6 +102,53 @@ class InspectionRecordViewSet(viewsets.ModelViewSet):
     ).prefetch_related("measurements").all()
     serializer_class = InspectionRecordSerializer
     permission_classes = [IsAuthenticated]
+
+
+    @action(detail=True, methods=["post"], permission_classes=[IsSupervisor])
+    def review(self, request, pk=None):
+            record = self.get_object()
+    
+            if record.inspector_id == request.user.id:
+                raise PermissionDenied(
+                    "Inspectors cannot approve their own inspections."
+                )
+    
+            decision = request.data.get("decision")
+            notes = request.data.get("notes", "")
+    
+            if record.status not in [
+                InspectionRecord.Status.PENDING_REVIEW,
+                InspectionRecord.Status.FAILED,
+            ]:
+                raise ValidationError(
+                    "Only completed inspections awaiting review or failed inspections can be reviewed."
+                )
+    
+            if decision == "approve":
+                if record.status == InspectionRecord.Status.FAILED:
+                    raise ValidationError(
+                        "Failed inspections cannot be approved. Reject or quarantine them."
+                    )
+                record.status = InspectionRecord.Status.APPROVED
+    
+            elif decision == "reject":
+                record.status = InspectionRecord.Status.REJECTED
+    
+            elif decision == "quarantine":
+                record.status = InspectionRecord.Status.QUARANTINED
+    
+            else:
+                raise ValidationError(
+                    "Decision must be approve, reject, or quarantine."
+                )
+    
+            if notes:
+                record.notes = (
+                    f"{record.notes}\nSupervisor review: {notes}".strip()
+                )
+    
+            record.save()
+            return Response(InspectionRecordSerializer(record).data)
 
     def get_permissions(self):
         if self.action == "create":
