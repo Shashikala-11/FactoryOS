@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import api from "./api";
 import Login from "./SignIn.jsx";
 import Materials from "./Materials.jsx";
-
+import Inspections from "./Inspections.jsx";
 import {
   Activity,
   ArrowDownRight,
@@ -204,9 +204,11 @@ if (!loggedIn) {
 
         <div className="page-content">
           {active === "Materials" ? (
-            <Materials />
-          ) : (
-            <>
+  <Materials />
+) : active === "Inspections" ? (
+  <Inspections />
+) : (
+  <>
           <section className="page-heading">
             <div>
               <div className="eyebrow"><span className="live-dot" /> OPERATIONS OVERVIEW</div>
