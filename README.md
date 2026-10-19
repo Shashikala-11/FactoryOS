@@ -42,13 +42,13 @@ The system demonstrates how material records, inspection templates, measurement 
 ## 🎥 Project Demo
 
 <p align="center">
-  <a href="[https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://youtu.be/6Eywce04yB8?si=Wir4gBdQyum2i7kt)">
-    <img src="[https://img.youtube.com/vi/YOUR_VIDEO_ID](https://youtu.be/6Eywce04yB8?si=Wir4gBdQyum2i7kt)/maxresdefault.jpg" alt="Watch the FactoryOS Demo on YouTube" width="850">
+  <a href="https://youtu.be/6Eywce04yB8?si=Wir4gBdQyum2i7kt">
+    <img src="https://youtu.be/6Eywce04yB8?si=Wir4gBdQyum2i7kt/maxresdefault.jpg" alt="Watch the FactoryOS Demo on YouTube" width="850">
   </a>
 </p>
 
 <p align="center">
-  <a href="[https://www.youtube.com/watch?v=YOUR_VIDEO_I](https://youtu.be/6Eywce04yB8?si=Wir4gBdQyum2i7kt)D">
+  <a href="https://youtu.be/6Eywce04yB8?si=Wir4gBdQyum2i7ktD">
     <img src="https://img.shields.io/badge/▶%20Watch%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch FactoryOS Demo">
   </a>
 </p>
