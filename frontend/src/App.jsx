@@ -1,5 +1,9 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import api from "./api";
+import Login from "./SignIn.jsx";
+import Materials from "./Materials.jsx";
+
 import {
   Activity,
   ArrowDownRight,
@@ -64,12 +68,6 @@ function App() {
   const [search, setSearch] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const filteredInspections = inspections.filter((item) =>
-    `${item.id} ${item.material} ${item.batch} ${item.inspector} ${item.status}`
-      .toLowerCase()
-      .includes(search.toLowerCase())
-  );
-
   const pageDescriptions = {
     Overview: "Here's what's happening across your operations today.",
     Factories: "Manage factory locations and departments.",
@@ -78,6 +76,57 @@ function App() {
     Production: "Keep track of production activity and quality checkpoints.",
     Dispatch: "Review dispatch readiness and clearance status.",
   };
+
+  const [loggedIn, setLoggedIn] = useState(
+  () => Boolean(localStorage.getItem("access"))
+);
+const [liveInspections, setLiveInspections] = useState(null);
+
+useEffect(() => {
+  if (!loggedIn) return;
+
+  api.get("/api/inspection-records/")
+    .then((response) => {
+      const records = Array.isArray(response.data)
+        ? response.data
+        : response.data.results ?? [];
+
+      const statusLabels = {
+        PENDING_REVIEW: "Pending review",
+        PASSED: "Passed",
+        FAILED: "Failed",
+        APPROVED: "Approved",
+        REJECTED: "Rejected",
+        QUARANTINED: "Quarantined",
+        IN_PROGRESS: "In progress",
+      };
+
+      setLiveInspections(
+        records.map((record) => ({
+          id: `INS-${String(record.id).padStart(4, "0")}`,
+          material: record.material_code,
+          batch: record.template_name,
+          inspector: record.inspector_username,
+          date: new Date(record.created_at).toLocaleDateString("en-IN"),
+          status: statusLabels[record.status] ?? record.status,
+        }))
+      );
+    })
+    .catch((error) => {
+      console.error("Could not load inspections:", error);
+    });
+}, [loggedIn]);
+
+ const visibleInspections = liveInspections ?? inspections;
+  const filteredInspections = visibleInspections.filter((item) =>
+  `${item.id} ${item.material} ${item.batch} ${item.inspector} ${item.status}`
+    .toLowerCase()
+    .includes(search.toLowerCase())
+  );
+
+if (!loggedIn) {
+  return <Login onLogin={() => setLoggedIn(true)} />;
+}
 
   return (
     <div className="app-shell">
@@ -154,6 +203,10 @@ function App() {
         </header>
 
         <div className="page-content">
+          {active === "Materials" ? (
+            <Materials />
+          ) : (
+            <>
           <section className="page-heading">
             <div>
               <div className="eyebrow"><span className="live-dot" /> OPERATIONS OVERVIEW</div>
@@ -287,6 +340,8 @@ function App() {
           </section>
 
           <footer className="page-footer"><span><span className="footer-dot green-dot" /> All systems operational</span><span>FactoryOS <b>·</b> Quality & Operations Management</span></footer>
+            </>
+          )}
         </div>
       </main>
     </div>
