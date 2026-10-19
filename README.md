@@ -39,6 +39,20 @@ The system demonstrates how material records, inspection templates, measurement 
 - Store application data in a relational PostgreSQL database.
 - Provide a modular interface for factory operations.
 
+## 🎥 Project Demo
+
+<p align="center">
+  <a href="[https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://youtu.be/6Eywce04yB8?si=Wir4gBdQyum2i7kt)">
+    <img src="[https://img.youtube.com/vi/YOUR_VIDEO_ID](https://youtu.be/6Eywce04yB8?si=Wir4gBdQyum2i7kt)/maxresdefault.jpg" alt="Watch the FactoryOS Demo on YouTube" width="850">
+  </a>
+</p>
+
+<p align="center">
+  <a href="[https://www.youtube.com/watch?v=YOUR_VIDEO_I](https://youtu.be/6Eywce04yB8?si=Wir4gBdQyum2i7kt)D">
+    <img src="https://img.shields.io/badge/▶%20Watch%20Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch FactoryOS Demo">
+  </a>
+</p>
+
 ## Screenshots
 
 The following screenshots showcase the application's interface and workflow.
@@ -47,45 +61,59 @@ The following screenshots showcase the application's interface and workflow.
 
 A dedicated sign-in screen provides the entry point for users accessing FactoryOS.
 
-![FactoryOS Login](C:\Users\shashikala\workspace-shashikala\FactoryOS\FactoryOS\factory-os-screenshots\login-page.png)
+<p align="center">
+  <img src="factory-os-screenshots/login-page.png" alt="FactoryOS Login" width="850">
+</p>
 
 ### 2. Overview — Operations Dashboard
 
 A centralized overview designed to present key factory operations and quality information at a glance.
 
-![FactoryOS Overview](C:\Users\shashikala\workspace-shashikala\FactoryOS\FactoryOS\factory-os-screenshots\overview-page.png)
+<p align="center">
+  <img src="factory-os-screenshots/overview-page.png" alt="FactoryOS Overview" width="850">
+</p>
 
 ### 3. Materials — Material Record Management
 
 View and manage material records, including material identifiers and descriptive information.
 
-![FactoryOS Materials](C:\Users\shashikala\workspace-shashikala\FactoryOS\FactoryOS\factory-os-screenshots\materials-page.png)
+<p align="center">
+  <img src="factory-os-screenshots/materials-page.png" alt="FactoryOS Materials" width="850">
+</p>
 
 ### 4. Inspections — Quality Inspection Management
 
 Create inspection records, record measurements, evaluate results, and track inspection status.
 
-![FactoryOS Inspections](C:\Users\shashikala\workspace-shashikala\FactoryOS\FactoryOS\factory-os-screenshots\inspections-page.png)
+<p align="center">
+  <img src="factory-os-screenshots/inspections-page.png" alt="FactoryOS Inspections" width="850">
+</p>
 
 ### 5. Production — Production Operations
 
 A production-focused interface for presenting production-related information and operational visibility.
 
-![FactoryOS Production](C:\Users\shashikala\workspace-shashikala\FactoryOS\FactoryOS\factory-os-screenshots\production-page.png)
+<p align="center">
+  <img src="factory-os-screenshots/production-page.png" alt="FactoryOS Production" width="850">
+</p>
 
 ### 6. Dispatch — Dispatch Operations
 
 A dedicated interface for presenting dispatch-related information and supporting operational tracking.
 
-![FactoryOS Dispatch](C:\Users\shashikala\workspace-shashikala\FactoryOS\FactoryOS\factory-os-screenshots\dispatch-page.png)
+<p align="center">
+  <img src="factory-os-screenshots/dispatch-page.png" alt="FactoryOS Dispatch" width="850">
+</p>
 
 ### 7. Factories — Factory Information
 
 A factory-level interface intended to organize information about factory locations or operational units.
 
-![FactoryOS Factories](C:\Users\shashikala\workspace-shashikala\FactoryOS\FactoryOS\factory-os-screenshots\factories-page.png)
+<p align="center">
+  <img src="factory-os-screenshots/factories-page.png" alt="FactoryOS Factories" width="850">
+</p>
 
-> **Note:** Screenshots document the interface, not necessarily the implementation status of every module. Confirm that each module's underlying functionality is implemented before describing it as operational.
+
 
 ---
 
