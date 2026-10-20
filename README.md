@@ -464,7 +464,7 @@ FactoryOS/
 │   │   └── index.css
 │   ├── package.json
 │   └── ...
-├── docs/
+├── factoryos-screenshots/
 │   └── screenshots/
 │       ├── login.png
 │       ├── overview.png
@@ -505,13 +505,6 @@ Computer Engineering | Data Science & AI
 
 - GitHub: [Shashikala-11](https://github.com/Shashikala-11)
 - LinkedIn: [Shashikala Gupta](https://www.linkedin.com/in/shashikala-gupta/)
-
----
-
-## License
-
-A license has not yet been specified. Add a `LICENSE` file and update this section if the project is intended for public distribution.
-
 ---
 
 *FactoryOS — Bringing material tracking, quality inspection, and supervisory review into one structured workflow.*
