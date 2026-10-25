@@ -1,4 +1,19 @@
-# FactoryOS — Factory Operations & Quality Management System
+<p align="center">
+  <img
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,50:1D4ED8,100:06B6D4&height=200&section=header&text=FactoryOS&fontSize=60&fontColor=FFFFFF&fontAlignY=38&desc=Factory%20Operations%20%7C%20Quality%20Management&descSize=16&descAlignY=58&descColor=E2E8F0&animation=fadeIn"
+    width="100%"
+    alt="FactoryOS — Factory Operations and Quality Management System"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&width=700&height=45&lines=Material+Tracking+%7C+Quality+Inspections;Inspector+%26+Supervisor+Workflows;Built+with+React%2C+Django+%26+PostgreSQL"
+    alt="FactoryOS project features"
+  />
+</p>
+
+
 
 A web-based factory operations platform designed to organize material management, quality inspections, production visibility, dispatch operations, and factory-level information through a centralized interface.
 
