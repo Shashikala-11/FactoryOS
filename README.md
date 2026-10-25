@@ -260,6 +260,8 @@ flowchart TB
 
 ## Technology Stack
 
+
+
 | Technology | Purpose |
 |---|---|
 | React | Frontend user interface |
@@ -274,6 +276,39 @@ flowchart TB
 | Vite | Frontend development server and build tooling |
 | Git and GitHub | Version control and source-code hosting |
 
+
+<p align="center">
+  <a href="https://react.dev/" target="_blank" rel="noreferrer">
+    <img src="https://skillicons.dev/icons?i=react" width="45" height="45" alt="React" title="React"/>
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
+    <img src="https://skillicons.dev/icons?i=js" width="45" height="45" alt="JavaScript" title="JavaScript"/>
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noreferrer">
+    <img src="https://skillicons.dev/icons?i=html" width="45" height="45" alt="HTML5" title="HTML5"/>
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noreferrer">
+    <img src="https://skillicons.dev/icons?i=css" width="45" height="45" alt="CSS3" title="CSS3"/>
+  </a>
+  <a href="https://www.python.org/" target="_blank" rel="noreferrer">
+    <img src="https://skillicons.dev/icons?i=python" width="45" height="45" alt="Python" title="Python"/>
+  </a>
+  <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer">
+    <img src="https://skillicons.dev/icons?i=django" width="45" height="45" alt="Django" title="Django"/>
+  </a>
+  <a href="https://www.postgresql.org/" target="_blank" rel="noreferrer">
+    <img src="https://skillicons.dev/icons?i=postgres" width="45" height="45" alt="PostgreSQL" title="PostgreSQL"/>
+  </a>
+  <a href="https://vite.dev/" target="_blank" rel="noreferrer">
+    <img src="https://skillicons.dev/icons?i=vite" width="45" height="45" alt="Vite" title="Vite"/>
+  </a>
+  <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
+    <img src="https://skillicons.dev/icons?i=git" width="45" height="45" alt="Git" title="Git"/>
+  </a>
+  <a href="https://github.com/" target="_blank" rel="noreferrer">
+    <img src="https://skillicons.dev/icons?i=github" width="45" height="45" alt="GitHub" title="GitHub"/>
+  </a>
+</p>
 ---
 
 ## Database and Data Flow
